@@ -1,12 +1,14 @@
-import { sequelize } from "./src/database/db.js";
+import { sequelize } from "./src/database/db.js"
+import {associations} from './src/models/index.js'
+
+associations()
 
 async function main() {
     try {
         await sequelize.authenticate()
-        await sequelize.sync()
-        console.log("Deu pau na maquina só vai",sequelize)
+        await sequelize.sync({force:true})
     } catch (error) {
-        console.error("Erro ao sincronizar com o banco:",error)
+        console.error("Erro ao sincronizar com o banco:", error)
     }
 }
 
