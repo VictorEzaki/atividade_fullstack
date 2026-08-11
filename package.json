@@ -1,0 +1,28 @@
+{
+  "name": "atividade_fullstack",
+  "version": "1.0.0",
+  "description": "Repositório destinado para a atividade da disciplina de fullstack",
+  "homepage": "https://github.com/NickolasHardRock/atividade_fullstack#readme",
+  "bugs": {
+    "url": "https://github.com/NickolasHardRock/atividade_fullstack/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickolasHardRock/atividade_fullstack.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "db:create": "node src/scripts/createDatabase.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.23.2",
+    "nodemon": "^3.1.14",
+    "sequelize": "^6.37.8"
+  }
+}
