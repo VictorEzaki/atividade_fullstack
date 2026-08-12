@@ -1,7 +1,6 @@
 import { sequelize } from "../database/db.js";
 import { DataTypes } from "sequelize";
-import user from "./user.js";
-import tema from "./tema.js";
+
 const joga = sequelize.define('joga',{
     id:{
         type:DataTypes.INTEGER,

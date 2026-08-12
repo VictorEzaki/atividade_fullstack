@@ -1,6 +1,6 @@
 import { sequelize } from "./src/database/db.js"
 import {associations} from './src/models/index.js'
-import user from './src/service/user.js'
+import userService from './src/service/user.js'
 
 associations()
 
@@ -22,9 +22,9 @@ main()
 //     role:'admin'
 // }
 
-// user.Create(newUser)
+// userService.Create(newUser)
 
-// const test = await user.FindAll()
+// const test = await userService.FindAll()
 // console.log(test)
 
 // const test2 = await user.FindById(1)

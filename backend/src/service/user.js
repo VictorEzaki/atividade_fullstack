@@ -29,7 +29,8 @@ class userService {
             throw new Error("Favor informar o email")
         } else if (!password) {
             throw new Error("Favor informar senha")
-        } else if (!role || roles.includes(roles)) {
+            // se Não for uma role ou se não estiver dentro das roles
+        } else if (!role || !roles.includes(role)) {
             throw new Error("Favor informe a permissão corretamente")
         }
 
@@ -42,9 +43,7 @@ class userService {
 
         const { id, name, email, password, role } = data
 
-        console.log(id)
-
-        const oldUser = await FindById(id)
+        const oldUser = await this.FindById(id)
 
         if (!oldUser) {
             throw new Error("Usuário não encontrado")
@@ -53,8 +52,8 @@ class userService {
         if (role && !roles.includes(role)) {
             throw new Error("Favor informar a permissão corretamente")
         }
-
-        if (role && oldUser.role === "admin") {
+        // A role só sera alterado se o usuario quiser
+        if (role) {
             oldUser.role = role
         }
 
@@ -69,13 +68,13 @@ class userService {
     }
 
     async Delete(id) {
-        const oldUser = await FindById(id)
+        const oldUser = await this.FindById(id)
 
         if (!oldUser) {
             throw new Error("Usuário não encontrado")
         }
 
-        oldUser.destroy()
+        await oldUser.destroy()
 
     }
 }
