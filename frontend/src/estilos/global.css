@@ -1,0 +1,126 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-base);
+  font-size: var(--texto-md);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  background-image:
+    linear-gradient(rgba(70, 23, 143, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 23, 143, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-family: var(--fonte-titulo);
+}
+
+h1 { font-size: var(--texto-3xl); }
+h2 { font-size: var(--texto-2xl); }
+h3 { font-size: var(--texto-xl); }
+
+p { margin: 0; line-height: 1.6; }
+
+a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover { text-decoration: underline; }
+
+button { font-family: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--cor-atencao);
+  outline-offset: 2px;
+  border-radius: var(--raio-sm);
+}
+
+.conteudo {
+  width: 100%;
+  max-width: var(--largura-conteudo);
+  margin: 0 auto;
+  padding: var(--espaco-8) var(--espaco-4) var(--espaco-16);
+}
+
+.pilha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  flex-wrap: wrap;
+}
+
+.texto-secundario {
+  color: var(--cor-texto-secundario);
+  font-size: var(--texto-sm);
+}
+
+.rotulo-secao {
+  display: inline-block;
+  font-family: var(--fonte-pixel);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--cor-superficie);
+  background: var(--gradiente-marca);
+  padding: 6px var(--espaco-3);
+  border-radius: var(--raio-completo);
+}
+
+.grade {
+  display: grid;
+  gap: var(--espaco-4);
+}
+
+.grade-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grade-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grade-fixa-2 { grid-template-columns: repeat(2, 1fr); }
+
+.acesso-teclado {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

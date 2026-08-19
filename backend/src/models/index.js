@@ -1,65 +1,27 @@
+const { Sequelize } = require('sequelize');
+const configuracaoBanco = require('../config/database');
 
-import { sequelize } from "../database/db.js";
-import requisito from "./requisito.js";
-import tema from "./tema.js";
-import user from "./user.js";
-import joga from "./joga.js";
-import administra from "./administra.js";
+const sequelize = new Sequelize(
+  configuracaoBanco.database,
+  configuracaoBanco.username,
+  configuracaoBanco.password,
+  configuracaoBanco
+);
 
-const associations = () =>{
+const Usuario = require('./Usuario')(sequelize);
+const Tema = require('./Tema')(sequelize);
+const Requisito = require('./Requisito')(sequelize);
+const Dificuldade = require('./Dificuldade')(sequelize);
+const Partida = require('./Partida')(sequelize);
+const RespostaPartida = require('./RespostaPartida')(sequelize);
+const TemaRequisito = require('./TemaRequisito')(sequelize);
 
-// Cria a tabela assoativa tema_requisito
-requisito.belongsToMany(tema,{
-    through:'tema_requisito'
-})
+const modelos = { Usuario, Tema, Requisito, Dificuldade, Partida, RespostaPartida, TemaRequisito };
 
-tema.belongsToMany(requisito,{
-    through:'tema_requisito'
-})
+Object.values(modelos).forEach((modelo) => {
+  if (typeof modelo.associar === 'function') {
+    modelo.associar(modelos);
+  }
+});
 
-// Faz a associação um para muitos com user é jogo e tema é jogo
-user.hasMany(joga
-    ,{
-    foreignKey:'fkUserIdJoga',
-    as:'jogadas'
-}
-)
-
-joga.belongsTo(user,{
-    foreignKey:'fkUserIdJoga'
-})
-
-tema.hasMany(joga
-    ,{
-    foreignKey:'fkTemaIdJoga',
-    as:'jogadasDoTema'
-}
-)
-
-joga.belongsTo(tema,{
-    foreignKey:'fkTemaIdJoga'
-})
-
-// Faz a associação um para muitos com user é administra e tema é administra
-user.hasMany(administra,{
-    foreignKey:'fkUserIdAdministra',
-    as:'administra'
-})
-
-administra.belongsTo(user,{
-    foreignKey:'fkUserIdAdministra'
-})
-
-tema.hasMany(administra,{
-    foreignKey:'fkTemaIdAdministra',
-    as:'administrados'
-})
-
-administra.belongsTo(tema,{
-    foreignKey:'fkUserIdAdministra'
-})
-
-}
-
-
-export {associations,user,tema,requisito,joga,administra}
+module.exports = { sequelize, Sequelize, ...modelos };

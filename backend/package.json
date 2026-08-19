@@ -1,31 +1,27 @@
 {
-  "name": "atividade_fullstack",
+  "name": "jogo-requisitos-backend",
   "version": "1.0.0",
-  "description": "Repositório destinado para a atividade da disciplina de fullstack",
-  "homepage": "https://github.com/NickolasHardRock/atividade_fullstack#readme",
-  "bugs": {
-    "url": "https://github.com/NickolasHardRock/atividade_fullstack/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NickolasHardRock/atividade_fullstack.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "index.js",
+  "description": "API do jogo educacional de classificacao de requisitos de software",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "db:create": "node src/scripts/createDatabase.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:preparar": "npm run banco:migrar && npm run banco:popular"
   },
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mysql2": "^3.23.2",
-    "nodemon": "^3.1.14",
-    "sequelize": "^6.37.8"
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7"
   }
 }

@@ -1,0 +1,8 @@
+const caminho = require('path');
+
+module.exports = {
+  config: caminho.resolve('src', 'config', 'sequelizeCli.js'),
+  'models-path': caminho.resolve('src', 'models'),
+  'migrations-path': caminho.resolve('src', 'database', 'migrations'),
+  'seeders-path': caminho.resolve('src', 'database', 'seeders')
+};
