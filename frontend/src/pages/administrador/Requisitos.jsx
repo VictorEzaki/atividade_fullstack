@@ -14,8 +14,8 @@ const FORMULARIO_VAZIO = { texto: '', tipo: 'RF', temasIds: [] };
 
 const TIPOS = [
   { valor: 'RF', texto: 'RF — Requisito funcional' },
-  { valor: 'RNF', texto: 'RNF — Requisito nao funcional' },
-  { valor: 'RN', texto: 'RN — Regra de negocio' }
+  { valor: 'RNF', texto: 'RNF — Requisito não funcional' },
+  { valor: 'RN', texto: 'RN — Regra de negócio' }
 ];
 
 export default function Requisitos() {
@@ -121,7 +121,7 @@ export default function Requisitos() {
     },
     {
       campo: 'acoes',
-      titulo: 'Acoes',
+      titulo: 'Ações',
       conteudo: (item) => (
         <div className="linha">
           <Botao variante="texto" tamanho="pequeno" icone="fa-solid fa-pen" onClick={() => abrirEdicao(item)}>
@@ -144,7 +144,7 @@ export default function Requisitos() {
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div className="cabecalho-pagina">
         <div>
-          <span className="rotulo-secao">Administracao</span>
+          <span className="rotulo-secao">Administração</span>
           <h1>Requisitos</h1>
         </div>
         <Botao icone="fa-solid fa-plus" onClick={abrirCriacao}>
@@ -195,7 +195,7 @@ export default function Requisitos() {
             required
           />
           <CampoSelecao
-            rotulo="Classificacao"
+            rotulo="Classificação"
             value={formulario.tipo}
             onChange={(evento) => definirFormulario((atual) => ({ ...atual, tipo: evento.target.value }))}
             opcoes={TIPOS}
@@ -241,7 +241,7 @@ export default function Requisitos() {
           </div>
         }
       >
-        <p>Requisitos ja usados em partidas nao podem ser excluidos, para preservar o historico dos jogadores.</p>
+        <p>Requisitos já usados em partidas não podem ser excluídos, para preservar o histórico dos jogadores.</p>
       </Modal>
     </div>
   );

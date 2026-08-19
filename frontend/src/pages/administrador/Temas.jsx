@@ -127,7 +127,7 @@ export default function Temas() {
     },
     {
       campo: 'ativo',
-      titulo: 'Situacao',
+      titulo: 'Situação',
       largura: '120px',
       conteudo: (item) => (
         <span className={`etiqueta etiqueta--${item.ativo ? 'sucesso' : 'neutra'}`}>
@@ -137,7 +137,7 @@ export default function Temas() {
     },
     {
       campo: 'acoes',
-      titulo: 'Acoes',
+      titulo: 'Ações',
       conteudo: (item) => (
         <div className="linha">
           <Botao variante="texto" tamanho="pequeno" icone="fa-solid fa-link" onClick={() => abrirAssociacao(item)}>
@@ -173,7 +173,7 @@ export default function Temas() {
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div className="cabecalho-pagina">
         <div>
-          <span className="rotulo-secao">Administracao</span>
+          <span className="rotulo-secao">Administração</span>
           <h1>Temas</h1>
         </div>
         <Botao icone="fa-solid fa-plus" onClick={abrirCriacao}>
@@ -187,12 +187,12 @@ export default function Temas() {
         <div className="filtros">
           <CampoTexto
             rotulo="Pesquisar"
-            placeholder="Nome ou descricao"
+            placeholder="Nome ou descrição"
             value={filtros.busca}
             onChange={(evento) => definirFiltros((atual) => ({ ...atual, busca: evento.target.value }))}
           />
           <CampoSelecao
-            rotulo="Situacao"
+            rotulo="Situação"
             placeholder="Todas"
             value={filtros.ativo}
             onChange={(evento) => definirFiltros((atual) => ({ ...atual, ativo: evento.target.value }))}
@@ -219,7 +219,7 @@ export default function Temas() {
             required
           />
           <CampoTexto
-            rotulo="Descricao"
+            rotulo="Descrição"
             multilinha
             value={formulario.descricao}
             onChange={(evento) => definirFormulario((atual) => ({ ...atual, descricao: evento.target.value }))}
@@ -230,7 +230,7 @@ export default function Temas() {
               checked={formulario.ativo}
               onChange={(evento) => definirFormulario((atual) => ({ ...atual, ativo: evento.target.checked }))}
             />
-            <span>Tema disponivel para os jogadores</span>
+            <span>Tema disponível para os jogadores</span>
           </label>
           <Botao type="submit" icone="fa-solid fa-floppy-disk">
             Salvar tema
@@ -288,8 +288,8 @@ export default function Temas() {
         }
       >
         <p>
-          O tema <strong>{exclusao?.nome}</strong> sera removido junto com suas associacoes. Temas com partidas
-          registradas nao podem ser excluidos, apenas desativados.
+          O tema <strong>{exclusao?.nome}</strong> será removido junto com suas associações. Temas com partidas
+          registradas não podem ser excluídos, apenas desativados.
         </p>
       </Modal>
     </div>

@@ -62,7 +62,7 @@ export default function NovaPartida() {
       <header className="preparacao__cabecalho">
         <span className="rotulo-secao">Preparar partida</span>
         <h1>Monte sua rodada</h1>
-        <p className="texto-secundario">Duas escolhas rapidas e voce entra direto no jogo.</p>
+        <p className="texto-secundario">Duas escolhas rápidas e você entra direto no jogo.</p>
       </header>
 
       <MensagemErro mensagem={erro} />
@@ -76,8 +76,8 @@ export default function NovaPartida() {
         {temas.length === 0 ? (
           <EstadoVazio
             icone="fa-solid fa-layer-group"
-            titulo="Nenhum tema disponivel"
-            descricao="Peca a um administrador para cadastrar e ativar temas."
+            titulo="Nenhum tema disponível"
+            descricao="Peça a um administrador para cadastrar e ativar temas."
           />
         ) : (
           <div className="grade grade-fixa-2">
@@ -112,7 +112,7 @@ export default function NovaPartida() {
         </div>
 
         {!etapa2Liberada ? (
-          <p className="texto-secundario">Selecione um tema para liberar os niveis de dificuldade.</p>
+          <p className="texto-secundario">Selecione um tema para liberar os níveis de dificuldade.</p>
         ) : (
           <div className="grade grade-fixa-2">
             {dificuldades.map((dificuldade) => (
@@ -130,7 +130,7 @@ export default function NovaPartida() {
               >
                 <strong>{dificuldade.nome}</strong>
                 <span className="texto-secundario">
-                  {dificuldade.tempo}s no relogio · {dificuldade.pontos} pontos por acerto
+                  {dificuldade.tempo}s no relógio · {dificuldade.pontos} pontos por acerto
                 </span>
                 {dificuldadeSelecionada === dificuldade.id && (
                   <span className="selecao__marca">
@@ -151,10 +151,10 @@ export default function NovaPartida() {
           disabled={!prontoParaComecar}
           onClick={iniciarPartida}
         >
-          Comecar partida
+          Começar partida
         </Botao>
         {!prontoParaComecar && (
-          <span className="texto-secundario">Selecione um tema e uma dificuldade para liberar o botao.</span>
+          <span className="texto-secundario">Selecione um tema e uma dificuldade para liberar o botão.</span>
         )}
       </footer>
     </div>

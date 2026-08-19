@@ -84,7 +84,7 @@ export default function Historico() {
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div>
         <span className="rotulo-secao">Seu desempenho</span>
-        <h1>Historico de partidas</h1>
+        <h1>Histórico de partidas</h1>
       </div>
 
       <MensagemErro mensagem={erro} />
@@ -124,7 +124,7 @@ export default function Historico() {
 
       <Modal
         aberto={Boolean(detalhes)}
-        titulo="Revisao da partida"
+        titulo="Revisão da partida"
         aoFechar={() => definirDetalhes(null)}
         rodape={
           <Botao variante="secundario" onClick={() => definirDetalhes(null)}>

@@ -23,7 +23,7 @@ export default function Cadastro() {
     definirErro('');
 
     if (formulario.senha !== formulario.confirmacao) {
-      definirErro('As senhas informadas nao sao iguais.');
+      definirErro('As senhas informadas não são iguais.');
       return;
     }
 
@@ -41,7 +41,7 @@ export default function Cadastro() {
   return (
     <div className="painel-formulario">
       <h2>Criar cadastro</h2>
-      <p className="texto-secundario">Leva menos de um minuto e ja libera a primeira partida.</p>
+      <p className="texto-secundario">Leva menos de um minuto e já libera a primeira partida.</p>
 
       <MensagemErro mensagem={erro} />
 
@@ -82,7 +82,7 @@ export default function Cadastro() {
       </form>
 
       <p className="texto-secundario">
-        Ja tem conta? <Link to="/entrar">Entrar</Link>
+        Já tem conta? <Link to="/entrar">Entrar</Link>
       </p>
     </div>
   );

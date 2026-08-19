@@ -38,7 +38,7 @@ export default function Resultado() {
       <section className="resultado">
         <span className="rotulo-secao">Partida encerrada</span>
         <h1>
-          {resultado.acertos} de {resultado.total} classificacoes corretas
+          {resultado.acertos} de {resultado.total} classificações corretas
         </h1>
         <p className="resultado__pontuacao">
           {resultado.pontuacao} <span>pontos</span>
@@ -61,11 +61,11 @@ export default function Resultado() {
       </section>
 
       <Cartao
-        titulo={erradas.length > 0 ? `Revise os ${erradas.length} erros` : 'Revisao completa da rodada'}
+        titulo={erradas.length > 0 ? `Revise os ${erradas.length} erros` : 'Revisão completa da rodada'}
         descricao={
           erradas.length > 0
-            ? 'Compare o que voce marcou com a classificacao correta.'
-            : 'Rodada perfeita. Aqui esta tudo o que apareceu.'
+            ? 'Compare o que você marcou com a classificação correta.'
+            : 'Rodada perfeita. Aqui está tudo o que apareceu.'
         }
       >
         <ul className="revisao">

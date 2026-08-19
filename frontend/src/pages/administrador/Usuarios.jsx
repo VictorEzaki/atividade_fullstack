@@ -96,7 +96,7 @@ export default function Usuarios() {
     },
     {
       campo: 'acoes',
-      titulo: 'Acoes',
+      titulo: 'Ações',
       conteudo: (item) => (
         <div className="linha">
           <Botao variante="texto" tamanho="pequeno" icone="fa-solid fa-pen" onClick={() => abrirEdicao(item)}>
@@ -119,11 +119,11 @@ export default function Usuarios() {
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div className="cabecalho-pagina">
         <div>
-          <span className="rotulo-secao">Administracao</span>
-          <h1>Usuarios</h1>
+          <span className="rotulo-secao">Administração</span>
+          <h1>Usuários</h1>
         </div>
         <Botao icone="fa-solid fa-user-plus" onClick={abrirCriacao}>
-          Novo usuario
+          Novo usuário
         </Botao>
       </div>
 
@@ -154,7 +154,7 @@ export default function Usuarios() {
 
       <Modal
         aberto={modalAberto}
-        titulo={emEdicao ? 'Editar usuario' : 'Novo usuario'}
+        titulo={emEdicao ? 'Editar usuário' : 'Novo usuário'}
         aoFechar={() => definirModalAberto(false)}
       >
         <form className="pilha" onSubmit={salvar}>
@@ -176,7 +176,7 @@ export default function Usuarios() {
             type="password"
             value={formulario.senha}
             onChange={(evento) => definirFormulario((atual) => ({ ...atual, senha: evento.target.value }))}
-            ajuda={emEdicao ? 'Deixe em branco para manter a senha atual.' : 'Minimo de 6 caracteres.'}
+            ajuda={emEdicao ? 'Deixe em branco para manter a senha atual.' : 'Mínimo de 6 caracteres.'}
             required={!emEdicao}
           />
           <CampoSelecao
@@ -189,14 +189,14 @@ export default function Usuarios() {
             ]}
           />
           <Botao type="submit" icone="fa-solid fa-floppy-disk">
-            Salvar usuario
+            Salvar usuário
           </Botao>
         </form>
       </Modal>
 
       <Modal
         aberto={Boolean(exclusao)}
-        titulo="Excluir usuario"
+        titulo="Excluir usuário"
         aoFechar={() => definirExclusao(null)}
         rodape={
           <div className="linha">
@@ -210,8 +210,8 @@ export default function Usuarios() {
         }
       >
         <p>
-          Excluir <strong>{exclusao?.nome}</strong> remove tambem o historico de partidas desse jogador. Essa acao
-          nao pode ser desfeita.
+          Excluir <strong>{exclusao?.nome}</strong> remove também o histórico de partidas desse jogador. Essa ação
+          não pode ser desfeita.
         </p>
       </Modal>
     </div>

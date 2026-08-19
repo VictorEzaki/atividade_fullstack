@@ -10,7 +10,7 @@ import MensagemErro from '../components/MensagemErro';
 
 const REGRAS = [
   { icone: 'fa-solid fa-list-ol', texto: 'Cada rodada traz 10 requisitos sorteados pelo servidor.' },
-  { icone: 'fa-solid fa-ban', texto: 'Alguns requisitos sao de outros temas: marque "nao condiz com o tema".' },
+  { icone: 'fa-solid fa-ban', texto: 'Alguns requisitos são de outros temas: marque "não condiz com o tema".' },
   { icone: 'fa-solid fa-stopwatch', texto: 'O tempo corre no servidor. Quando acaba, a partida encerra.' },
   { icone: 'fa-solid fa-star', texto: 'Cada acerto vale os pontos da dificuldade escolhida.' }
 ];
@@ -43,7 +43,7 @@ export default function Inicio() {
           <span className="rotulo-secao">Seu hub de jogador</span>
           <h1>{usuario?.nome?.split(' ')[0]}, pronto para mais uma rodada?</h1>
           <p className="texto-secundario">
-            Escolha um tema, defina o nivel de pressao no relogio e classifique dez requisitos.
+            Escolha um tema, defina o nível de pressão no relógio e classifique dez requisitos.
           </p>
           <div className="linha" style={{ marginTop: 'var(--espaco-6)' }}>
             <Link to="/partidas/nova">
@@ -58,7 +58,7 @@ export default function Inicio() {
             </Link>
             <Link to="/historico">
               <Botao variante="secundario" icone="fa-solid fa-clock-rotate-left">
-                Ver historico
+                Ver histórico
               </Botao>
             </Link>
           </div>
@@ -86,11 +86,11 @@ export default function Inicio() {
             resumo && (
               <div className="pilha-estatisticas">
                 <div className="indicador">
-                  <span className="indicador__rotulo">Partidas concluidas</span>
+                  <span className="indicador__rotulo">Partidas concluídas</span>
                   <strong className="indicador__valor">{resumo.totalPartidas}</strong>
                 </div>
                 <div className="indicador">
-                  <span className="indicador__rotulo">Melhor pontuacao</span>
+                  <span className="indicador__rotulo">Melhor pontuação</span>
                   <strong className="indicador__valor">{resumo.melhorPontuacao}</strong>
                 </div>
                 <div className="indicador">
@@ -106,7 +106,7 @@ export default function Inicio() {
           <div className="pilha" style={{ gap: 'var(--espaco-3)' }}>
             <Link to="/historico" className="menu__item menu__item--hub">
               <i className="fa-solid fa-clock-rotate-left" aria-hidden="true" />
-              <span>Rever seu historico</span>
+              <span>Rever seu histórico</span>
             </Link>
             <Link to="/ranking" className="menu__item menu__item--hub">
               <i className="fa-solid fa-trophy" aria-hidden="true" />

@@ -8,7 +8,7 @@ export default function Cabecalho({ itens = [], compacto = false }) {
   return (
     <header className={`cabecalho ${compacto ? 'cabecalho--compacto' : ''}`}>
       <div className="cabecalho__interno">
-        <Link to="/" className="marca" aria-label="Classifica, pagina inicial">
+        <Link to="/" className="marca" aria-label="Classifica, página inicial">
           <span className="marca__simbolo" aria-hidden="true">
             RF
           </span>

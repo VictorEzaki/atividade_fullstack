@@ -85,7 +85,7 @@ export default function Dificuldades() {
     { campo: 'pontos', titulo: 'Pontos por acerto' },
     {
       campo: 'ativo',
-      titulo: 'Situacao',
+      titulo: 'Situação',
       conteudo: (item) => (
         <span className={`etiqueta etiqueta--${item.ativo ? 'sucesso' : 'neutra'}`}>
           {item.ativo ? 'Ativa' : 'Inativa'}
@@ -94,7 +94,7 @@ export default function Dificuldades() {
     },
     {
       campo: 'acoes',
-      titulo: 'Acoes',
+      titulo: 'Ações',
       conteudo: (item) => (
         <div className="linha">
           <Botao variante="texto" tamanho="pequeno" icone="fa-solid fa-pen" onClick={() => abrirEdicao(item)}>
@@ -117,7 +117,7 @@ export default function Dificuldades() {
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div className="cabecalho-pagina">
         <div>
-          <span className="rotulo-secao">Administracao</span>
+          <span className="rotulo-secao">Administração</span>
           <h1>Dificuldades</h1>
         </div>
         <Botao icone="fa-solid fa-plus" onClick={abrirCriacao}>
@@ -163,7 +163,7 @@ export default function Dificuldades() {
               checked={formulario.ativo}
               onChange={(evento) => definirFormulario((atual) => ({ ...atual, ativo: evento.target.checked }))}
             />
-            <span>Dificuldade disponivel para os jogadores</span>
+            <span>Dificuldade disponível para os jogadores</span>
           </label>
           <Botao type="submit" icone="fa-solid fa-floppy-disk">
             Salvar dificuldade
@@ -187,7 +187,7 @@ export default function Dificuldades() {
         }
       >
         <p>
-          Dificuldades ja usadas em partidas nao podem ser excluidas. Nesse caso, desative a dificuldade para tira-la
+          Dificuldades já usadas em partidas não podem ser excluídas. Nesse caso, desative a dificuldade para tirá-la
           da tela de nova partida.
         </p>
       </Modal>

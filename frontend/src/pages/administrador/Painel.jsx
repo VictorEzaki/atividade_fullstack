@@ -26,7 +26,7 @@ export default function Painel() {
 
   const cartoesNumericos = [
     { rotulo: 'Jogadores', valor: totais.jogadores, icone: 'fa-solid fa-users' },
-    { rotulo: 'Partidas concluidas', valor: totais.partidas, icone: 'fa-solid fa-gamepad' },
+    { rotulo: 'Partidas concluídas', valor: totais.partidas, icone: 'fa-solid fa-gamepad' },
     { rotulo: 'Temas', valor: totais.temas, icone: 'fa-solid fa-layer-group' },
     { rotulo: 'Requisitos', valor: totais.requisitos, icone: 'fa-solid fa-list-check' },
     { rotulo: 'Aproveitamento geral', valor: `${indicadores.aproveitamentoGeral}%`, icone: 'fa-solid fa-bullseye' }
@@ -35,7 +35,7 @@ export default function Painel() {
   return (
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div>
-        <span className="rotulo-secao">Visao geral</span>
+        <span className="rotulo-secao">Visão geral</span>
         <h1>Painel</h1>
       </div>
 
@@ -63,7 +63,7 @@ export default function Painel() {
           />
         </Cartao>
 
-        <Cartao titulo="Usuarios mais ativos">
+        <Cartao titulo="Usuários mais ativos">
           <Tabela
             chave={(item) => item.usuario}
             mensagemVazia="Nenhum jogador ativo ainda."
@@ -77,10 +77,10 @@ export default function Painel() {
         </Cartao>
       </div>
 
-      <Cartao titulo="Requisitos com maior taxa de erro" descricao="Bons candidatos a revisao de texto ou classificacao.">
+      <Cartao titulo="Requisitos com maior taxa de erro" descricao="Bons candidatos a revisão de texto ou classificação.">
         <Tabela
           chave={(item) => item.requisito}
-          mensagemVazia="Ainda nao ha respostas suficientes."
+          mensagemVazia="Ainda não há respostas suficientes."
           colunas={[
             { campo: 'requisito', titulo: 'Requisito' },
             { campo: 'tipo', titulo: 'Tipo', largura: '90px' },

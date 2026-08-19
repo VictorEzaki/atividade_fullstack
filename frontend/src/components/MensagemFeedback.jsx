@@ -9,11 +9,11 @@ export default function MensagemFeedback({ feedback }) {
     <div className={`feedback ${acertou ? 'feedback--sucesso' : 'feedback--erro'}`} role="status">
       <i className={acertou ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-xmark'} aria-hidden="true" />
       <div>
-        <strong>{acertou ? 'Acertou!' : 'Nao foi dessa vez.'}</strong>
+        <strong>{acertou ? 'Acertou!' : 'Não foi dessa vez.'}</strong>
         <p className="texto-secundario">
           {acertou
             ? `+${feedback.pontuacaoGanha} pontos para o seu placar.`
-            : `A classificacao correta era: ${descreverAlternativa(feedback.respostaCorreta)}.`}
+            : `A classificação correta era: ${descreverAlternativa(feedback.respostaCorreta)}.`}
         </p>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Menu({ itens, orientacao = 'horizontal' }) {
   return (
-    <nav className={`menu menu--${orientacao}`} aria-label="Navegacao principal">
+    <nav className={`menu menu--${orientacao}`} aria-label="Navegação principal">
       {itens.map((item) => (
         <NavLink
           key={item.caminho}

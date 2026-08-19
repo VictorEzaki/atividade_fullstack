@@ -10,7 +10,7 @@ export default function LayoutAutenticacao() {
           </span>
           <span className="marca__nome">Classifica</span>
         </span>
-        <h1>Requisito funcional, não funcional ou regra de negocio?</h1>
+        <h1>Requisito funcional, não funcional ou regra de negócio?</h1>
         <p>
           Dez requisitos por rodada, o relógio correndo e uma pegadinha no meio: alguns nem pertencem ao tema
           sorteado. Classifique rápido, acerte mais e suba no ranking.

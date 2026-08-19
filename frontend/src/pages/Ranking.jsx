@@ -47,10 +47,10 @@ export default function Ranking() {
   return (
     <div className="pilha" style={{ gap: 'var(--espaco-6)' }}>
       <div>
-        <span className="rotulo-secao">Competicao</span>
+        <span className="rotulo-secao">Competição</span>
         <h1>Ranking</h1>
         <p className="texto-secundario">
-          Vale a melhor partida de cada jogador. Empate na pontuacao? Ganha quem terminou em menos tempo.
+          Vale a melhor partida de cada jogador. Empate na pontuação? Ganha quem terminou em menos tempo.
         </p>
       </div>
 

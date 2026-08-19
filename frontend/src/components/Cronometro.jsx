@@ -11,7 +11,7 @@ function definirEstado(segundosRestantes, tempoTotal) {
 }
 
 const DESCRICAO_ESTADO = {
-  normal: 'Tempo confortavel',
+  normal: 'Tempo confortável',
   atencao: 'Tempo acabando',
   critico: 'Tempo quase no fim'
 };

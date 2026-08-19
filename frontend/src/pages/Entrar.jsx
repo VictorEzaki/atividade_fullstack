@@ -36,7 +36,7 @@ export default function Entrar() {
   return (
     <div className="painel-formulario">
       <h2>Entrar</h2>
-      <p className="texto-secundario">Use sua conta para jogar e acompanhar sua evolucao.</p>
+      <p className="texto-secundario">Use sua conta para jogar e acompanhar sua evolução.</p>
 
       <MensagemErro mensagem={erro} />
 
@@ -65,7 +65,7 @@ export default function Entrar() {
       </form>
 
       <p className="texto-secundario">
-        Ainda nao tem conta? <Link to="/cadastro">Criar cadastro</Link>
+        Ainda não tem conta? <Link to="/cadastro">Criar cadastro</Link>
       </p>
     </div>
   );
